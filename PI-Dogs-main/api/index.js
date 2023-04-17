@@ -1,3 +1,4 @@
+const getTemperamentsToBDD = require("./src/getTemperamentsToBDD")
 //                       _oo0oo_
 //                      o8888888o
 //                      88" . "88
@@ -19,6 +20,8 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+
+getTemperamentsToBDD();
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
