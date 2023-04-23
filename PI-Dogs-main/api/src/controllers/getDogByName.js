@@ -46,7 +46,7 @@ const name3 = {
 
     const allDogs = [...dogsBDD, ...dogsApiFilter];
     
-    if (!allDogs.length) throw new Error ("No se encontró la raza solicitada");
+    if (!allDogs.length) throw new Error ("No se encontró coincidencia entre el texto ingresado y las razas existentes");
 
     return allDogs;
 

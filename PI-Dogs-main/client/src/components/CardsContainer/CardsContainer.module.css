@@ -1,0 +1,31 @@
+.container{
+    background-color:bisque;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+
+.container_filters{
+    background-color: rgba(175, 147, 112, 0.329);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnPage{
+    background-image: url("../assets/huella_de_perro_para_botones.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    line-height: 50px;
+    background-position: center center;   
+    font-weight: bold;
+    height: 35px;
+    width: 35px;
+    border-style: none;
+}
+

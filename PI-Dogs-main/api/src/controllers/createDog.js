@@ -7,7 +7,7 @@ const createDog = async ({
     height, 
     weight, 
     life_span, 
-    temperaments,
+    temperaments
 }) => {
     const newDog = await Dog.create({
         image, 
