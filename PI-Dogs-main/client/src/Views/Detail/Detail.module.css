@@ -1,0 +1,35 @@
+.container_detail{
+    display: flex;
+    background-color: white;
+    border-top: 20px solid white;
+    border-bottom: 20px solid white;
+    height: fit-content;
+    justify-content: center;
+    padding:2%;
+    border-radius: 50px;
+
+}
+
+.container_card{
+    color: #efd510;
+    background-color: black;
+    height: 480px ;
+    width: 500px;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 200px;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
+    border: 5px #efd510;
+    border-style:double;
+}
+
+.container_card:hover{
+    transform: scale(1.1);
+}
+.img{
+    height: 200px;
+    width: auto;
+    border-radius: 200px;
+}

@@ -22,16 +22,16 @@ const Detail = () => {
     }
     
     return (
-       <div>
-       <h1>Esta es la vista de Detail</h1>
-       <p>Id: {dog[0].id}</p>
-       <img src={dog[0].image} alt={dog.name} height='300px' width='450px'/>
+       <div className={style.container_detail}>
+         <div className={style.container_card}>
+       <img className={style.img} src={dog[0].image} alt={dog.name} height='300px' width='450px'/>
        <h2>Name: {dog[0].name}</h2>
-       <p>Height: {dog[0].height}</p>
-       <p>Weight: {dog[0].weight}</p>
+       <p>Height: {dog[0].height} cm</p>
+       <p>Weight: {dog[0].weight} kg</p>
        <p>Temperamentos: {dog[0].temperaments.join(",")}</p>
-       <p>Life Span: {dog[0].life_span}</p>
-       
+       <p>Life Span: {dog[0].life_span} years</p>
+       <p>Id: {dog[0].id}</p>
+         </div>
        </div>
     );
 };

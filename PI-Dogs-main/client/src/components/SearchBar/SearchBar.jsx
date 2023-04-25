@@ -11,7 +11,7 @@ const handleChange = (event) => {
     return(
 
     <div>
-        <input type="search" placeholder="search a dog" onChange={handleChange} />
+        <input className={style.searchbar} type="search" placeholder="search a dog" onChange={handleChange} />
     </div>
     )
 }

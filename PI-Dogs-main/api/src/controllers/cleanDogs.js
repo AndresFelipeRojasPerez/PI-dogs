@@ -23,7 +23,7 @@ const cleanDogsApi = (arrayDogs) =>
             name : dog.name,
             created: dog.created,
             temperaments : dog.temperaments.map((temp) => {
-                return `${temp.name},`
+                return `${temp.name}`
             }),
             weight : dog.weight,
         };

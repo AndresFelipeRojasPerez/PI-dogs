@@ -18,9 +18,11 @@ const Landing = () => {
     
             <div className={style.mid_container}>
                 <div className={style.left_container}>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkfZRnoetA9qveB4gKR-HXoxNzqPb8RwWDuw&usqp=CAU"/>
                 </div>
-             <button onClick={handleLogin}>Henry Dogs</button>
+                <button className={style.btn} onClick={handleLogin}>
+                 <span className={style.blackText}>World</span>
+                  <span className={style.yellowText}>Dogs</span>
+                </button>
             </div>
 
             <span className={style.botton_container}>

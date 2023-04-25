@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { getDogsByName } from "../../redux/actions";
+import CardImg from "../CardImg/CardImg";
 
 
 const CardsContainer = () => {
@@ -105,17 +106,16 @@ const CardsContainer = () => {
                 <div className={style.container_filters}>
                 
                     <div className={style.filter_by_origin}>
-                        <h4>SELECT ORIGIN OF DATA DOGS</h4>
-                        <button value="ApiDogs" onClick={handleFilterByOrigin}>API DOGS</button>
-                        <button value="BDD" onClick={handleFilterByOrigin}>CREATE BY USERS</button>
-                        <button value="all" onClick={handleFilterByOrigin}>ALL</button>
+                        <button className={style.btn_create_by} value="ApiDogs" onClick={handleFilterByOrigin}>Web Dogs</button>
+                        <button className={style.btn_create_by} value="BDD" onClick={handleFilterByOrigin}>User Dogs</button>
+                        <button className={style.btn_create_by} value="all" onClick={handleFilterByOrigin}>All</button>
                     </div>
 
                     <SearchBar onSearch={onSearch}/>
                 
                 <div>
-                <h4>FILTER BY TEMPERAMENT</h4>
-                <select onChange={handleFilterByTemperament}>
+                <select className={style.select} onChange={handleFilterByTemperament}>
+                <option key="all" value="" >Temperament</option>
                 <option key="all" value="" >All</option>
                 {temperaments.map((temperament) => (
               <option key={temperament.id} value={temperament.name}>
@@ -128,33 +128,40 @@ const CardsContainer = () => {
 
 
                 <div className={style.filter_by_alfabet}>
-                        <button value="A-Z" onClick={handleFilterByAlfabet}>A-Z</button>
-                        <button value="Z-A" onClick={handleFilterByAlfabet}>Z-A</button>
+                        <button className={style.btn_az} value="A-Z" onClick={handleFilterByAlfabet}>A-Z</button>
+                        <button className={style.btn_az} value="Z-A" onClick={handleFilterByAlfabet}>Z-A</button>
                     </div>
 
                 
                 </div>
 
-            <div className='pagination' >
-             { page>0 && <button className={style.btnPage} onClick={handlePagePrev}>&lArr; </button>}   
-             {buttons.map((button,i) => <button className={style.btnPage} value={i} onClick={handlePage} key={i}>{button}</button>)}
-             { page<(dogs.length-15) && <button className={style.btnPage} onClick={handlePageNext}>&rArr;</button>}   
-            </div>
 
             <div className={style.container}>
 
                 { dogs.length ? dogs.slice(page, (page+8)).map((dog) => {
                 
-                return <Card
-                id={dog.id}
-                image={dog.image}
-                name= {dog.name}
-                created={dog.created}
-                temperaments={dog.temperaments}
-                weight={dog.weight}
+                return <div className={style.container_cards}>
+                <div className={style.card_img}>
+                <CardImg
+                    image={dog.image}
+                    name={dog.name}
                 />
+                </div>
+                <div className={style.card}>
+                <Card
+                    id={dog.id}
+                    created={dog.created}
+                    temperaments={dog.temperaments}
+                    weight={dog.weight} />
+                    </div>
+                </div>
             }) : <p>{message}</p>}
         </div>
+            <div className='pagination' >
+             { page>0 && <button className={style.btnPagePrev} onClick={handlePagePrev}>&#8592; </button>}   
+             {buttons.map((button,i) => <button className={style.btnPage} value={i} onClick={handlePage} key={i}>{button}</button>)}
+             { page<(dogs.length-15) && <button className={style.btnPageNext} onClick={handlePageNext}>&#8594;</button>}   
+            </div>
         
         </div>
     )

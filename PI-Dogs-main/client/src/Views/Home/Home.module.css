@@ -1,0 +1,17 @@
+.blackText {
+    cursor: pointer;
+    font-size:300%;
+    font-family:fantasy;
+    color: #000000;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.yellowText {
+  cursor: pointer;
+  font-size:300%;
+  font-family:fantasy;
+  color: #efd510;
+  background-clip: text;
+  -webkit-background-clip: text;
+}

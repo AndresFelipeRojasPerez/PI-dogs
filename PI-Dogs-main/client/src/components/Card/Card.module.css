@@ -1,7 +1,11 @@
-.card{
-    background-color: rgb(139, 120, 96);
-    border: 1px solid rgb(90, 71, 48);
-    width: fit-content;
-    height:fit-content;
-    border-radius: 10px;
+.title{
+    margin-top: 25px;
+    color: #efd510;
+}
+
+.detail{
+    font-family:'Times New Roman', Times, serif;
+    color: #efd510;
+    font-size:larger;
+    text-decoration:underline;
 }

@@ -90,48 +90,48 @@ const [form,setForm] = useState({
     }
     }
     return (
-
-        <form onSubmit={handleSubmit}>
+<div className={style.container}>
+        <form className={style.form} onSubmit={handleSubmit}>
         <h1>CREATE A BREED OF DOG</h1>
-        <div>
+        <div className={style.container_input}>
             <label>Image (link) : </label>
-            <input type="text" value={form.image} name="image" onChange={changeHandler} placeholder="ej: https://www.imagen.com/"/>
+            <input className={style.input} type="text" value={form.image} name="image" onChange={changeHandler} placeholder="ej: https://www.imagen.com/"/>
             <br/>
             {errors.image && <span className={style.error}>{errors.image}</span>}
         </div>
 
-        <div>
+        <div className={style.container_input}>
             <label>Name: </label>
-            <input type="text" value={form.name} name="name" onChange={changeHandler} placeholder="ej: Border Collie"/>
+            <input className={style.input} type="text" value={form.name} name="name" onChange={changeHandler} placeholder="ej: Border Collie"/>
             <br/>
             {errors.name && <span className={style.error}>{errors.name}</span>}
         </div>
        
-        <div>
+        <div className={style.container_input}>
             <label>Height (cm) : </label>
-            <input type="text" value={form.height} name="height" onChange={changeHandler} placeholder="ej: 30 - 50" />
+            <input className={style.input} type="text" value={form.height} name="height" onChange={changeHandler} placeholder="ej: 30 - 50" />
             <br/>
             {errors.height && <span className={style.error}>{errors.height}</span>}
         </div>
 
-        <div>
+        <div className={style.container_input}>
             <label>Weight (kg) : </label>
-            <input type="text" color="red" value={form.weight} name="weight" onChange={changeHandler} placeholder="ej: 10 - 20"/>
+            <input className={style.input} type="text" color="red" value={form.weight} name="weight" onChange={changeHandler} placeholder="ej: 10 - 20"/>
             <br/>
             {errors.weight && <span className={style.error}>{errors.weight}</span>}
         </div>
 
-        <div>
+        <div className={style.container_input}>
             <label>Life Span (years): </label>
-            <input type="text" value={form.life_span} name="life_span" onChange={changeHandler} placeholder="ej: 12 - 15"/>
+            <input className={style.input} type="text" value={form.life_span} name="life_span" onChange={changeHandler} placeholder="ej: 12 - 15"/>
             <br/>
             {errors.life_span && <span className={style.error}>{errors.life_span}</span>}
         </div>
 
-        <div>
+        <div className={style.container_input}>
             <label>Temperaments: </label>
             <div>
-        <button onClick={handleOpenList}>
+        <button className={style.btn_select} onClick={handleOpenList}>
           Select temperaments ({form.temperaments.length})
         </button>
         {isOpen && (
@@ -157,10 +157,12 @@ const [form,setForm] = useState({
         </div>
 
         <div>
-           <button type="submit">CREATE</button>
+           <button className={style.btn_create} type="submit">CREATE</button>
         </div>
 
        </form>
+
+       </div>
     )
 };
 
