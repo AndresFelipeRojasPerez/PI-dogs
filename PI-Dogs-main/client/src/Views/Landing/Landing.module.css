@@ -76,3 +76,9 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+
+@media screen and (max-width: 600px){
+    
+ 
+}

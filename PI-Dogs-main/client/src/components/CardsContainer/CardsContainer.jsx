@@ -17,6 +17,7 @@ const CardsContainer = () => {
     let dogs = useSelector(state => state.dogs);
     
     const [ page, setPage ] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
     const [ origin, setOrigin ] = useState("");
     const [alfabet, setAlfabet] = useState("");
     const [ temperaments, setTemperaments] = useState([]);
@@ -35,22 +36,28 @@ const CardsContainer = () => {
 
     const handlePage = (event) => {
         setPage(event.target.value*8);
+        setCurrentPage(parseInt(event.target.value));
+        scrollTo(0,0);
     };
     
     const handlePagePrev = () => {
-        setPage(page - 8)
+        setPage(page - 8);
+        setCurrentPage((page / 8)-1);
+        scrollTo(0,0);
     };
 
     const handlePageNext = () => {
-        setPage(page + 8)
+        setPage(page + 8);
+        setCurrentPage((page / 8)+1);
+        scrollTo(0,0);
     };
 
     const handleFilterByOrigin = (event) => {
-        setOrigin(event.target.value)
+        setOrigin(event.target.value);
     };
 
     const handleFilterByAlfabet = (event) => {
-        setAlfabet(event.target.value)
+        setAlfabet(event.target.value);
     };
 
     const handleFilterByTemperament = (event) => {
@@ -77,7 +84,6 @@ const CardsContainer = () => {
 
     if (origin === "all") {
         setOrigin("");
-        // if(!temperamentSelected.length)setTemperamentSelected('');
     };
 
 
@@ -143,6 +149,7 @@ const CardsContainer = () => {
                 return <div className={style.container_cards}>
                 <div className={style.card_img}>
                 <CardImg
+                    id={dog.id}
                     image={dog.image}
                     name={dog.name}
                 />
@@ -159,8 +166,8 @@ const CardsContainer = () => {
         </div>
             <div className='pagination' >
              { page>0 && <button className={style.btnPagePrev} onClick={handlePagePrev}>&#8592; </button>}   
-             {buttons.map((button,i) => <button className={style.btnPage} value={i} onClick={handlePage} key={i}>{button}</button>)}
-             { page<(dogs.length-15) && <button className={style.btnPageNext} onClick={handlePageNext}>&#8594;</button>}   
+             {buttons.map((button,i) => <button className={`${style.btnPage} ${i === currentPage ? style.active : ""}`} value={i} onClick={handlePage} key={i}>{button}</button>)}
+             { page<(dogs.length-8) && <button className={style.btnPageNext} onClick={handlePageNext}>&#8594;</button>}   
             </div>
         
         </div>

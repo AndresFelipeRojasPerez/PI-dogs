@@ -115,6 +115,20 @@
     height: 35px;
     width: 35px;
 }
+.active{
+    margin-left: 2px;
+    border: 1px solid #efd510;
+    color: #efd510;
+    background-color: black;
+    border-radius: 100%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;   
+    font-weight: bold;
+    height: 35px;
+    width: 35px;
+}
 
 .btnPagePrev{
     font-size: xx-large;
