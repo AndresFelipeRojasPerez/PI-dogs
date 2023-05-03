@@ -1,7 +1,9 @@
 
 .img{
     height: 200px;
+    width: 300px;
     margin-top: 5%;
     margin-bottom: -5%;
     border-radius: 20px;
 }
+

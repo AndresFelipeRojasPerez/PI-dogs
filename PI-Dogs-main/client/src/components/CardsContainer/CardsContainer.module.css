@@ -1,5 +1,5 @@
 .container{
-    width:100%;
+    width:100vw;
     display: flex;
     flex-direction: row;
     justify-content:left;
@@ -10,19 +10,20 @@
 }
 
 .container_cards{
-    margin: 8.8%;
+    margin-left: 5.5%;
     margin-top: 2%;
     margin-bottom: 8%;
     position: relative;
-    width: 300px;
+    width: 500px;
     height: 400px;
+    background-color: white;
 }
 
 .card_img {
     background-color: #efd510;
     border-radius: 20px;
     position: relative;
-    width: 160%;
+    width: 100%;
     height: 70%;
     border: 3px solid black;
     z-index: 100;
@@ -35,7 +36,7 @@
 .card{
     justify-content: c;
     position: absolute;
-    width: 160%;
+    width: 100%;
     height: 57%;
     left: 0;
     bottom: 0;
@@ -60,6 +61,7 @@
 .container_filters{
     color: white;
     height: 150px;
+    width: 100vw;
     background-color:black;
     display:flex;
     flex-direction: row;
@@ -77,12 +79,63 @@
     cursor: pointer;
 }
 
+.current_btn_create_by{
+    color: #efd510;
+    width: 100px;
+    height: 30px;
+    font-size: 90%;
+    margin-left: 6px;
+    background-color: black;
+    border: 1.5px solid #efd510;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.title_filters{
+    margin-top: -10%;
+    margin-bottom: 2%;
+}
+
+.btn_weight{
+    width: 80px;
+    height: 25px;
+    font-size: 90%;
+    margin-right: 10px;
+    background-color: #efd510;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.current_btn_weight{
+    color: #efd510;
+    width: 80px;
+    height: 25px;
+    font-size: 90%;
+    margin-right: 10px;
+    background-color: black;
+    border: 1.5px solid #efd510;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 .btn_az{
     width: 80px;
     height: 25px;
     font-size: 90%;
     margin-right: 10px;
     background-color: #efd510;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.current_btn_az{
+    color: #efd510;
+    width: 80px;
+    height: 25px;
+    font-size: 90%;
+    margin-right: 10px;
+    background-color: black;
+    border: 1.5px solid #efd510;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -144,4 +197,75 @@
     border-style: none;
     background: none;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 600px){
+
+    .container_cards{
+      margin-right: 5%;
+        margin-bottom: 30%;
+
+    }
+
+    .container_filters{
+        height: 100px;
+        
+    }
+
+    .btn_create_by{
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+    
+    .current_btn_create_by{
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+
+    .select{
+        font-size: 50%;
+        margin-top: 7%;
+        width: 80px;
+        height: 15px;
+    }
+
+    .title_filters{
+        font-size: 50%;
+    }
+
+    .btn_weight{
+        margin-left: 10%;
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+    
+    .current_btn_weight{
+        margin-left: 10%;
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+
+    .btn_az{
+        margin-left: 10%;
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+    
+    .current_btn_az{
+        margin-left: 10%;
+        font-size: 30%;
+        width: 50px;
+        height: 15px;
+    }
+
+    .option{
+        font-size: 10%;
+    }
+
 }

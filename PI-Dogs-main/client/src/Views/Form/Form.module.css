@@ -11,10 +11,12 @@
 
 
 .form{
-    
+    display: flex;
+    flex-direction: column;
+    align-items:end;
     color: #efd510;
     background-color: black;
-    height: 480px ;
+    height: 550px ;
     width: 500px;
     padding: 2%;
     padding-top: 5%;
@@ -25,10 +27,32 @@
     transition: transform 0.3s ease;
     border: 5px #efd510;
     border-style:double;
+   
 }
 
 .container_input{
-    margin-bottom: 2%;
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 4%;
+    margin-right: 20%;
+}
+
+
+.container_input_2{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+
+}
+
+.title{
+    margin-right: 10%;
+}
+
+.label{
+    margin-right: 5%;
 }
 
 .input{
@@ -57,9 +81,38 @@
     width: 200px;
     border: 2px solid #efd510;
     cursor: pointer; 
+    margin-left: -150%;
 }
 
 .error{
     font-size: small;
     color: red;
+}
+
+@media screen and (max-width: 600px){
+    .title{
+        margin-top: 20%;
+        margin-right: 20%;
+        font-size: 100%;
+    }
+
+    .input{
+        height: 20px;
+        width: 100px;
+    }
+
+    .btn_select{
+        font-size: 50%;
+        height: 30px;
+        width: 100px;
+    }
+
+    .btn_create{
+        margin-left: -50%;
+    }
+
+    .error{
+        font-size: 70%;
+    }
+    
 }

@@ -3,7 +3,10 @@ const validate = (form, property, errors, setErrors) => {
 
 switch (property) {
     case "image":
-        if(!form.image) setErrors({...errors, image:"Campo Image vacío"});
+        if(!form.image) {setErrors({...errors, image:"Campo Image vacío"});
+        }else{
+            setErrors({...errors, image:""})
+        }
 
         break;
 

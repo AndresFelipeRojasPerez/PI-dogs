@@ -9,4 +9,5 @@ const getAllTemperamentsHandler = async (req, res) => {
     }
 }
 
+
 module.exports = getAllTemperamentsHandler;

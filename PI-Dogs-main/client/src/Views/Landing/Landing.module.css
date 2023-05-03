@@ -34,9 +34,6 @@
     box-sizing: border-box;
 }
 
-.img{
-    margin-left: -30%;
-}
 
 .btn {
   background: none;
@@ -79,6 +76,18 @@
 
 
 @media screen and (max-width: 600px){
-    
  
+    .btn{
+        height: 150px;
+        width: 300px;
+    }
+
+    .blackText {
+        font-size:100%;
+    }
+
+    .yellowText {
+        font-size:100%;
+      }
+
 }

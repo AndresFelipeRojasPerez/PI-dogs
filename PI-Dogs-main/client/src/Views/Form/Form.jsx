@@ -82,7 +82,6 @@ const [form,setForm] = useState({
     const handleSubmit = (event) => {
         event.preventDefault();
        if (!validateSubmit(errors, form)) {
-        console.log(temperaments);
         alert("Debe completar todos los campos sin errores y selecionando al menos un temperamento")
     }else{
       console.log(form);
@@ -92,50 +91,62 @@ const [form,setForm] = useState({
     return (
 <div className={style.container}>
         <form className={style.form} onSubmit={handleSubmit}>
-        <h1>CREATE A BREED OF DOG</h1>
+        <h1 className={style.title}>CREATE A BREED OF DOG</h1>
         <div className={style.container_input}>
-            <label>Image (link) : </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Image(link): </label>
             <input className={style.input} type="text" value={form.image} name="image" onChange={changeHandler} placeholder="ej: https://www.imagen.com/"/>
             <br/>
+            </div>
             {errors.image && <span className={style.error}>{errors.image}</span>}
         </div>
 
         <div className={style.container_input}>
-            <label>Name: </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Name: </label>
             <input className={style.input} type="text" value={form.name} name="name" onChange={changeHandler} placeholder="ej: Border Collie"/>
             <br/>
+          </div>
             {errors.name && <span className={style.error}>{errors.name}</span>}
         </div>
        
         <div className={style.container_input}>
-            <label>Height (cm) : </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Height(cm): </label>
             <input className={style.input} type="text" value={form.height} name="height" onChange={changeHandler} placeholder="ej: 30 - 50" />
             <br/>
+          </div>
             {errors.height && <span className={style.error}>{errors.height}</span>}
         </div>
 
         <div className={style.container_input}>
-            <label>Weight (kg) : </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Weight(kg): </label>
             <input className={style.input} type="text" color="red" value={form.weight} name="weight" onChange={changeHandler} placeholder="ej: 10 - 20"/>
             <br/>
+          </div>
             {errors.weight && <span className={style.error}>{errors.weight}</span>}
         </div>
 
         <div className={style.container_input}>
-            <label>Life Span (years): </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Life Span(years): </label>
             <input className={style.input} type="text" value={form.life_span} name="life_span" onChange={changeHandler} placeholder="ej: 12 - 15"/>
             <br/>
+          </div>
             {errors.life_span && <span className={style.error}>{errors.life_span}</span>}
         </div>
 
         <div className={style.container_input}>
-            <label>Temperaments: </label>
+          <div className={style.container_input_2}>
+            <label className={style.label}>Temperaments: </label>
             <div>
         <button className={style.btn_select} onClick={handleOpenList}>
           Select temperaments ({form.temperaments.length})
         </button>
         {isOpen && (
           <select
+          className={style.select}
             id="temperaments"
             name="temperaments"
             multiple
@@ -153,6 +164,7 @@ const [form,setForm] = useState({
         )}
       </div>
       <br/>
+      </div>
             {errors.temperaments && <span className={style.error}>{errors.temperaments}</span>}
         </div>
 
@@ -165,5 +177,5 @@ const [form,setForm] = useState({
        </div>
     )
 };
-
+ 
 export default Form;

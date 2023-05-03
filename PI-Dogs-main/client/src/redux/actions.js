@@ -17,24 +17,26 @@ export const getDogs = () => {
 
 export const getDogsByName = (name) => {
     return async function (dispatch) {
-         await axios.get(`http://localhost:3001/dogs?name=${name}`).then((response) => {
-            const dogsFilteredByName = response.data;
-            dispatch({ type: GET_DOGS_BY_NAME, payload: dogsFilteredByName });
-        }).catch((err) => {
-           
-            alert(err.response.data);
-        })
+
+        try {
+            const dogFound = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+            return dispatch({ type: GET_DOGS_BY_NAME, payload: dogFound.data })
+        } catch (error) {
+            alert(error.response.data);
+        }
     };
 }; 
 
 
 export const createDog = (dog) => {
     return async function (dispatch) {
-         await axios.post(`http://localhost:3001/dogs`, dog).then((response) => {
-            dispatch({ type: CREATE_DOG, payload: response.data });
-        }).catch((err) => {
-            console.log(err);
-            alert(err.response.data.error);
-        })
+
+        try {
+            const dogCreated = await axios.post(`http://localhost:3001/dogs`, dog);
+            return dispatch({ type: CREATE_DOG, payload: dogCreated.data });
+            
+        } catch (error) {
+            alert(error.response.data);
+        }
     };
 }; 

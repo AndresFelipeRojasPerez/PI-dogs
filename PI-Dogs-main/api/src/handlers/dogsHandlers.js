@@ -7,7 +7,6 @@ const getDogByName = require('../controllers/getDogByName');
 const getAllDogsHandler = async (req, res) => {
     const {name} = req.query;
 
-    
     try {
       const results = name ? await getDogByName(name) : await getAllDogs();
         res.status(200).json(results);

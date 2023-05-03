@@ -2,4 +2,15 @@
     border: 3px solid #efd510;
     border-radius: 20px;
     height: 30px;
+    
 }
+
+@media screen and (max-width: 600px){
+    .searchbar{
+        font-size: 60%;
+        width: 80px;
+        height: 15px;
+        
+    }
+}
+

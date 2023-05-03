@@ -33,3 +33,18 @@
     width: auto;
     border-radius: 200px;
 }
+
+
+@media screen and (max-width: 600px){
+    .container_card{
+        width: 300px;
+        height: 600px;
+    }
+
+    .img{
+        height: 160px;
+        width: auto;
+        margin-top: 15%;
+    }
+
+}

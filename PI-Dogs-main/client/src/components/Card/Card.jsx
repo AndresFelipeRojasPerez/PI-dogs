@@ -11,7 +11,7 @@ const Card = ({id,temperaments,weight}) => {
             <p>Weight: {`(${weight})Kg`}</p>
         <Link to= {`/detail/${id}`}><h2 className={style.detail}>Detail</h2></Link>
         </div>
-    )
+    ) 
 
 }
 
